@@ -39,12 +39,23 @@ Choose one primary archetype and keep its skeleton intact. Do not blend all six 
 5. Turn the topic into one or two concrete visual metaphors such as an app window, device, document, robot, screen, chart, or card.
 6. Keep a clear foreground/midground/background hierarchy and preserve the exaggerated thumbnail energy of the references.
 
+## Value point plus headline
+
+Prefer a two-text hierarchy whenever the topic has a clear time, efficiency, result, or benefit promise:
+
+- `value_point`: a short independent value label such as `1分钟`, `省下3小时`, or `直接看结果`.
+- `title`: the single main question or claim, such as `如何判断需求价值？`.
+
+Treat `value_point` as a primary visual promise, not as a weak subtitle. Give it strong contrast, a warm accent color, a badge/ribbon/outlined panel, and enough scale and spacing to read immediately at phone size. Keep the main headline large and dominant below or beside it; do not merge the two texts into one line.
+
+Use the exact user-provided value point and never invent a number, duration, result, or benefit claim. If no value point is provided and the topic clearly needs one, derive only a non-quantified phrase from the user’s wording; otherwise ask for one before generation. By default, the cover contains exactly these two text elements and no subtitle or extra labels.
+
 ## Title length, text, and exclusions
 
-Enforce a hard title limit of 12 visible characters. Count Chinese characters, Latin letters, digits, and punctuation; ignore spaces and line breaks. Check the final rendered headline before every generation.
+Enforce a hard `title` limit of 12 visible characters. Count Chinese characters, Latin letters, digits, and punctuation; ignore spaces and line breaks. The separate `value_point` does not count toward this title limit, but keep it concise and phone-readable. Check both text elements in the final rendered cover before every generation.
 
 - If the requested title is longer than 12 visible characters, compress it to the shortest faithful question or claim before generating. Preserve the core subject and tension; remove subtitles first.
-- Prefer one headline and no subtitle. Do not put explanatory copy, method lists, or warnings into the image unless they fit the same 12-character headline budget and the user explicitly asks for them.
+- Prefer one value point plus one headline, with no subtitle. Do not put explanatory copy, method lists, warnings, UI labels, or decorative pseudo-text into the image unless the user explicitly asks for them.
 - Examples that satisfy the limit: `AI怎么操作网页？`, `什么网页任务适合AI？`, `不是所有网页任务`.
 
 Treat user-supplied copy as immutable once it has been compressed or approved. Never invent a claim, product name, number, or comparison winner.
@@ -55,7 +66,7 @@ Never include heart icons, like counts, comment counts, share buttons, usernames
 
 ## Generation workflow
 
-1. Parse `title`, `subtitle`, `topic`, `archetype`, `character`, `aspect-ratio`, and `output-format`; default to 3:4 and the selected saved character.
+1. Parse `value_point`, `title`, `topic`, `archetype`, `character`, `aspect-ratio`, and `output-format`; default to the two-text hierarchy, 3:4, and the selected saved character.
 2. Choose the closest single archetype and inspect its bundled reference image. Read `references/style-anatomy.md` for detailed composition decisions.
 3. Resolve or register the character before writing the final prompt. Never let a character in a style reference silently override the selected profile.
 4. Write one concise prompt containing canvas, title layout, character identity, pose, topic objects, lighting, depth, and exclusions.
@@ -68,13 +79,17 @@ Never include heart icons, like counts, comment counts, share buttons, usernames
 ```text
 Create a polished 3:4 vertical social-media cover in the saved high-impact reference style.
 Composition archetype: [one archetype and reference file]. Keep its layout: [title zone,
-subject placement, object placement, depth direction]. Exact headline: “[TITLE]” on [line
-breaks], with [color hierarchy], huge condensed extra-bold lettering, thick dark shadow and
-slight perspective. Optional subtitle: “[SUBTITLE]”. Use character profile “[PROFILE]”; preserve
-identity, hair, face, proportions, and clothing, with [pose/expression]. Visualize [TOPIC] using
-[one or two concrete objects]. Near-black/navy background, strong rim light, controlled glow,
-particles/shards/smoke, cinematic contrast, crisp phone-size readability. No heart icon, like
-count, comment count, share UI, watermark, username, feed frame, progress bar, or extra text.
+subject placement, object placement, depth direction]. Use exactly two text elements and no
+subtitle: value point “[VALUE_POINT]” as a large, high-priority warm-accent badge or outlined
+panel; exact main headline “[TITLE]” on [line breaks], with [color hierarchy], huge condensed
+extra-bold lettering, thick dark shadow and slight perspective. Keep the value point visually
+separate from the headline and make both readable at phone size. Use character profile
+“[PROFILE]”; preserve identity, hair, face, proportions, and clothing, with [pose/expression].
+Visualize [TOPIC] using [one or two concrete objects], including a visual metaphor for the
+value point when useful. Near-black/navy background, strong rim light, controlled glow,
+particles/shards/smoke, cinematic contrast, crisp phone-size readability. No other words,
+labels, pseudo-text, heart icon, like count, comment count, share UI, watermark, username,
+feed frame, or progress bar.
 ```
 
 ## Bundled resources
