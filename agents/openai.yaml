@@ -1,0 +1,7 @@
+interface:
+  display_name: "Dylan Cover Generator"
+  short_description: "Create high-impact vertical social media covers"
+  default_prompt: "Use $dylan-cover-generator to create a high-impact vertical cover in the saved reference style."
+
+policy:
+  allow_implicit_invocation: true
