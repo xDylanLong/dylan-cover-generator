@@ -6,6 +6,19 @@
 
 [中文 README](README.md) · English
 
+<p align="center">
+  <a href="https://www.xiaohongshu.com/user/profile/5df3742d000000000100212">Xiaohongshu</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAHH81Iv6MWugNS03rPOnWulSnhRbM26Ud_S16rlgqOfY4nR8bznDSWbFIcviihJJm">Douyin</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://x.com/xDylanLong">X / Twitter</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://looda.cc">Personal website</a>
+</p>
+
+## Repository scope
+
+This is an installable, reusable Codex Skill source repository, not a gallery for generated cover artwork.
+
+The repository publishes `SKILL.md`, composition references, character identity anchors, style guidance, and the character registry script so others can install and use the Skill. PNG, JPG, and other covers generated after using the Skill belong in the user’s own workspace. They are not repository content and must not be committed as demo assets.
+
 ## What it solves
 
 Many social-media covers have a headline but fail to explain why the viewer should care. Time, efficiency, results, or benefits get buried in small text, while the headline and the promise compete for attention.
@@ -69,6 +82,8 @@ skill_root="${CODEX_HOME:-$HOME/.codex}/skills/dylan-cover-generator"
 mkdir -p "$skill_root"
 rsync -a --exclude='.git' --exclude='outputs' ./ "$skill_root/"
 ```
+
+The local `outputs/` directory is for personal workspace artifacts only and is ignored by Git. Do not copy generated covers back into this repository.
 
 Windows PowerShell:
 

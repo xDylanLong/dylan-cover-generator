@@ -4,7 +4,20 @@
 >
 > 3:4 竖版 · 价值点 + 主标题 · 高冲击构图 · 可复用角色 · Codex Skill
 
-[English](README.en.md) · 中文
+中文 · [English](README.en.md)
+
+<p align="center">
+  <a href="https://www.xiaohongshu.com/user/profile/5df3742d000000000100212">小红书</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAHH81Iv6MWugNS03rPOnWulSnhRbM26Ud_S16rlgqOfY4nR8bznDSWbFIcviihJJm">抖音</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://x.com/xDylanLong">X / Twitter</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://looda.cc">个人主页</a>
+</p>
+
+## 仓库定位
+
+这是一个可安装、可复用的 Codex Skill 源码仓库，不是生成封面作品的展示仓库。
+
+仓库发布的是 `SKILL.md`、构图参考、角色身份锚点、样式说明和角色注册脚本，大家可以基于这些内容安装并使用 Skill。运行 Skill 后得到的 PNG、JPG 或其他封面产出属于使用者自己的 workspace，不放入本仓库，也不作为仓库示例资产提交。
 
 ## 它解决什么问题
 
@@ -69,6 +82,8 @@ skill_root="${CODEX_HOME:-$HOME/.codex}/skills/dylan-cover-generator"
 mkdir -p "$skill_root"
 rsync -a --exclude='.git' --exclude='outputs' ./ "$skill_root/"
 ```
+
+本地生成的 `outputs/` 目录仅用于个人工作区，已被 Git 忽略；不要把生成的封面反向复制回仓库。
 
 Windows PowerShell：
 
